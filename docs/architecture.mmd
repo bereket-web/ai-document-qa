@@ -1,0 +1,22 @@
+flowchart LR
+    U[Browser UI] --> API[FastAPI]
+    API --> PARSE[Local document parsing<br/>PDF · DOCX · TXT · MD]
+    PARSE --> CHUNK[Word-window chunks<br/>page metadata · overlap]
+    CHUNK --> EMB[Multilingual E5 embeddings<br/>FastEmbed / ONNX Runtime]
+    EMB --> DB[(SQLite<br/>chunk metadata + vectors)]
+    CHUNK --> FTS[(SQLite FTS5<br/>BM25 lexical index)]
+    Q[User question] --> QE[Query embedding]
+    QE --> DENSE[Exact cosine top-k]
+    DB --> DENSE
+    Q --> LEX[FTS5 BM25]
+    FTS --> LEX
+    DENSE --> RRF[Reciprocal-rank fusion]
+    LEX --> RRF
+    RRF --> CITE[Ranked passages<br/>stable source IDs]
+    CITE --> GEN{LLM configured?}
+    GEN -->|No| EXTRACT[Quoted extractive answer]
+    GEN -->|Yes, opt-in| LLM[OpenAI-compatible generation<br/>source-bounded prompt]
+    EXTRACT --> RESP[Answer + source snippets]
+    LLM --> VALIDATE[Allow-list citation IDs]
+    VALIDATE --> RESP
+    RESP --> U

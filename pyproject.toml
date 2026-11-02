@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-document-qa"
+version = "0.1.0"
+description = "Local-first hybrid RAG with citations, persistent vector storage and evaluation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "AI/ML Portfolio Project"}]
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn[standard]>=0.30,<1",
+  "python-multipart>=0.0.9,<1",
+  "fastembed>=0.7,<0.8",
+  "pypdf>=5,<7",
+  "python-docx>=1.1,<2",
+]
+
+[project.optional-dependencies]
+llm = ["openai>=1.50,<4"]
+test = ["pytest>=8,<10", "httpx2>=2.12,<3", "ruff>=0.11,<1"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]

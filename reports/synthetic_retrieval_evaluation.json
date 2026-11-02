@@ -1,0 +1,481 @@
+{
+  "benchmark": "Synthetic internal-policy retrieval smoke benchmark",
+  "synthetic_only": true,
+  "notes": "Four fictional documents and ten hand-authored, document-level relevance labels; not a real-user or external QA quality benchmark. One Amharic-language case is a smoke test only.",
+  "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "fastembed_version": "0.7.4",
+  "documents": 4,
+  "chunks": 7,
+  "queries": 10,
+  "metrics_by_retriever": {
+    "dense_cosine": {
+      "hit_at_1": 0.9,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank_at_5": 0.95
+    },
+    "bm25": {
+      "hit_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank_at_5": 1.0
+    },
+    "hybrid_rrf": {
+      "hit_at_1": 1.0,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank_at_5": 1.0
+    }
+  },
+  "per_query": [
+    {
+      "question": "What is the annual learning budget for a full-time employee?",
+      "relevant_documents": [
+        "01_people_handbook.md"
+      ],
+      "ranked_documents": {
+        "dense_cosine": [
+          "01_people_handbook.md",
+          "02_travel_policy.md",
+          "03_data_handling.md",
+          "04_amharic_travel_policy.md"
+        ],
+        "bm25": [
+          "01_people_handbook.md",
+          "02_travel_policy.md",
+          "03_data_handling.md"
+        ],
+        "hybrid_rrf": [
+          "01_people_handbook.md",
+          "02_travel_policy.md",
+          "03_data_handling.md",
+          "04_amharic_travel_policy.md"
+        ]
+      },
+      "metrics": {
+        "dense_cosine": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "bm25": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "hybrid_rrf": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        }
+      }
+    },
+    {
+      "question": "Which weekdays are the hybrid office days?",
+      "relevant_documents": [
+        "01_people_handbook.md"
+      ],
+      "ranked_documents": {
+        "dense_cosine": [
+          "01_people_handbook.md",
+          "03_data_handling.md",
+          "04_amharic_travel_policy.md",
+          "02_travel_policy.md"
+        ],
+        "bm25": [
+          "01_people_handbook.md",
+          "03_data_handling.md",
+          "02_travel_policy.md"
+        ],
+        "hybrid_rrf": [
+          "01_people_handbook.md",
+          "03_data_handling.md",
+          "02_travel_policy.md",
+          "04_amharic_travel_policy.md"
+        ]
+      },
+      "metrics": {
+        "dense_cosine": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "bm25": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "hybrid_rrf": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        }
+      }
+    },
+    {
+      "question": "How early should a planned vacation request be sent?",
+      "relevant_documents": [
+        "01_people_handbook.md"
+      ],
+      "ranked_documents": {
+        "dense_cosine": [
+          "01_people_handbook.md",
+          "02_travel_policy.md",
+          "04_amharic_travel_policy.md",
+          "03_data_handling.md"
+        ],
+        "bm25": [
+          "01_people_handbook.md",
+          "02_travel_policy.md",
+          "03_data_handling.md"
+        ],
+        "hybrid_rrf": [
+          "01_people_handbook.md",
+          "02_travel_policy.md",
+          "03_data_handling.md",
+          "04_amharic_travel_policy.md"
+        ]
+      },
+      "metrics": {
+        "dense_cosine": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "bm25": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "hybrid_rrf": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        }
+      }
+    },
+    {
+      "question": "What is the nightly lodging reimbursement cap for domestic travel?",
+      "relevant_documents": [
+        "02_travel_policy.md"
+      ],
+      "ranked_documents": {
+        "dense_cosine": [
+          "02_travel_policy.md",
+          "01_people_handbook.md",
+          "04_amharic_travel_policy.md",
+          "03_data_handling.md"
+        ],
+        "bm25": [
+          "02_travel_policy.md",
+          "04_amharic_travel_policy.md",
+          "01_people_handbook.md",
+          "03_data_handling.md"
+        ],
+        "hybrid_rrf": [
+          "02_travel_policy.md",
+          "04_amharic_travel_policy.md",
+          "01_people_handbook.md",
+          "03_data_handling.md"
+        ]
+      },
+      "metrics": {
+        "dense_cosine": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "bm25": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "hybrid_rrf": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        }
+      }
+    },
+    {
+      "question": "How long after returning from a trip do employees have to file expenses?",
+      "relevant_documents": [
+        "02_travel_policy.md"
+      ],
+      "ranked_documents": {
+        "dense_cosine": [
+          "01_people_handbook.md",
+          "02_travel_policy.md",
+          "03_data_handling.md",
+          "04_amharic_travel_policy.md"
+        ],
+        "bm25": [
+          "02_travel_policy.md",
+          "01_people_handbook.md",
+          "03_data_handling.md"
+        ],
+        "hybrid_rrf": [
+          "02_travel_policy.md",
+          "01_people_handbook.md",
+          "03_data_handling.md",
+          "04_amharic_travel_policy.md"
+        ]
+      },
+      "metrics": {
+        "dense_cosine": {
+          "hit_at_1": 0.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 0.5
+        },
+        "bm25": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "hybrid_rrf": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        }
+      }
+    },
+    {
+      "question": "When is an itemized receipt required for expenses?",
+      "relevant_documents": [
+        "02_travel_policy.md"
+      ],
+      "ranked_documents": {
+        "dense_cosine": [
+          "02_travel_policy.md",
+          "01_people_handbook.md",
+          "03_data_handling.md",
+          "04_amharic_travel_policy.md"
+        ],
+        "bm25": [
+          "02_travel_policy.md",
+          "01_people_handbook.md",
+          "03_data_handling.md"
+        ],
+        "hybrid_rrf": [
+          "02_travel_policy.md",
+          "01_people_handbook.md",
+          "03_data_handling.md",
+          "04_amharic_travel_policy.md"
+        ]
+      },
+      "metrics": {
+        "dense_cosine": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "bm25": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "hybrid_rrf": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        }
+      }
+    },
+    {
+      "question": "Where are customer data exports allowed to be stored?",
+      "relevant_documents": [
+        "03_data_handling.md"
+      ],
+      "ranked_documents": {
+        "dense_cosine": [
+          "03_data_handling.md",
+          "01_people_handbook.md",
+          "02_travel_policy.md",
+          "04_amharic_travel_policy.md"
+        ],
+        "bm25": [
+          "03_data_handling.md",
+          "02_travel_policy.md",
+          "01_people_handbook.md"
+        ],
+        "hybrid_rrf": [
+          "03_data_handling.md",
+          "02_travel_policy.md",
+          "01_people_handbook.md",
+          "04_amharic_travel_policy.md"
+        ]
+      },
+      "metrics": {
+        "dense_cosine": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "bm25": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "hybrid_rrf": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        }
+      }
+    },
+    {
+      "question": "What should someone do when they find exposed credentials?",
+      "relevant_documents": [
+        "03_data_handling.md"
+      ],
+      "ranked_documents": {
+        "dense_cosine": [
+          "03_data_handling.md",
+          "01_people_handbook.md",
+          "02_travel_policy.md",
+          "04_amharic_travel_policy.md"
+        ],
+        "bm25": [
+          "03_data_handling.md",
+          "01_people_handbook.md",
+          "02_travel_policy.md"
+        ],
+        "hybrid_rrf": [
+          "03_data_handling.md",
+          "01_people_handbook.md",
+          "02_travel_policy.md",
+          "04_amharic_travel_policy.md"
+        ]
+      },
+      "metrics": {
+        "dense_cosine": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "bm25": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "hybrid_rrf": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        }
+      }
+    },
+    {
+      "question": "Who must approve a data retention extension?",
+      "relevant_documents": [
+        "03_data_handling.md"
+      ],
+      "ranked_documents": {
+        "dense_cosine": [
+          "03_data_handling.md",
+          "02_travel_policy.md",
+          "04_amharic_travel_policy.md",
+          "01_people_handbook.md"
+        ],
+        "bm25": [
+          "03_data_handling.md",
+          "01_people_handbook.md",
+          "02_travel_policy.md"
+        ],
+        "hybrid_rrf": [
+          "03_data_handling.md",
+          "02_travel_policy.md",
+          "01_people_handbook.md",
+          "04_amharic_travel_policy.md"
+        ]
+      },
+      "metrics": {
+        "dense_cosine": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "bm25": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "hybrid_rrf": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        }
+      }
+    },
+    {
+      "question": "የጉዞ ወጪ ሪፖርት መቼ ማስገባት አለበት?",
+      "relevant_documents": [
+        "04_amharic_travel_policy.md"
+      ],
+      "ranked_documents": {
+        "dense_cosine": [
+          "04_amharic_travel_policy.md",
+          "02_travel_policy.md",
+          "01_people_handbook.md",
+          "03_data_handling.md"
+        ],
+        "bm25": [
+          "04_amharic_travel_policy.md"
+        ],
+        "hybrid_rrf": [
+          "04_amharic_travel_policy.md",
+          "02_travel_policy.md",
+          "01_people_handbook.md",
+          "03_data_handling.md"
+        ]
+      },
+      "metrics": {
+        "dense_cosine": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "bm25": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        },
+        "hybrid_rrf": {
+          "hit_at_1": 1.0,
+          "recall_at_3": 1.0,
+          "recall_at_5": 1.0,
+          "reciprocal_rank_at_5": 1.0
+        }
+      }
+    }
+  ]
+}
