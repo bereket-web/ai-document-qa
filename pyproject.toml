@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Local-first hybrid RAG with citations, persistent vector storage and evaluation"
 readme = "README.md"
 requires-python = ">=3.10"
-license = {text = "MIT"}
+license = "MIT"
 authors = [{name = "AI/ML Portfolio Project"}]
 dependencies = [
   "fastapi>=0.115,<1",

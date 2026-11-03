@@ -2,7 +2,7 @@
 
 A local-first retrieval-augmented generation (RAG) demo for asking questions about uploaded documents. It parses PDF, DOCX, Markdown and plain text; chunks with overlap; creates multilingual embeddings locally; searches with dense cosine similarity plus SQLite FTS5 BM25; fuses ranks; and returns answers with citations to retrieved source passages.
 
-**Default mode needs no API key.** It returns short, verbatim evidence excerpts with citation IDs. Optional OpenAI-compatible generation can be enabled through environment variables; if enabled, retrieved passages are sent to that endpoint. The app is not deployed or published.
+**Default mode needs no API key.** It returns short, verbatim evidence excerpts with citation IDs. Optional OpenAI-compatible generation can be enabled through environment variables; if enabled, retrieved passages are sent to that endpoint. [The source code is public on GitHub](https://github.com/bereket-web/ai-document-qa); the demo itself is not hosted.
 
 ## Try the demo
 
